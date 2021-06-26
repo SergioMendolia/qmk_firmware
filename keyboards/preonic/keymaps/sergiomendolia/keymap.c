@@ -16,6 +16,7 @@
 
 #include QMK_KEYBOARD_H
 #include "muse.h"
+#include "keymap_fr_ch.h"
 
 
 enum preonic_layers {
@@ -39,20 +40,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * | esc  |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Bksp |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Tab  |   b  |   é  |   p  |   o  |   è  |   !  |   v  |   d  |   l  |   j  | Del  |
+ * | Tab  |   b  |   w  |   p  |   o  |   `  |   `  |   v  |   d  |   l  |   j  | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | Shift|   A  |   u  |   i  |   e  |   ,  |   c  |   t  |   s  |   r  |   n  |  m   |
+ * | $    |   A  |   u  |   i  |   e  |   ,  |   c  |   t  |   s  |   r  |   n  | enter|
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * | Shift|   ^  |  à   |   y  |   x  |   .  |   k  |   ?  |   q  |   g  |   h  |Enter |
+ * | Shift|   z  |  y   |   x  |   .  |   k  |   m  |   q  |   g  |   h  |   f  |rshft |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Brite| Ctrl | Alt  | GUI  |Lower |    Space    |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_preonic_grid(
-  KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,       KC_5,       KC_6,    KC_7,       KC_8,    KC_9,    KC_0,    KC_BSPC,
-  KC_TAB,  KC_B,    KC_SCLN, KC_P,    KC_O,       S(KC_RBRC), KC_EXLM, KC_V,       KC_D,    KC_L,    KC_J,    KC_DEL,
-  KC_LSFT, KC_A,    KC_U,    KC_I,    KC_E,       KC_COMM,    KC_C,    KC_T,       KC_S,    KC_R,    KC_N,    KC_M,
-  KC_LSFT, KC_EQL,  KC_QUOT, KC_Z,    KC_X,       KC_DOT,     KC_K,    S(KC_MINS), KC_Q,    KC_G,    KC_H,    KC_ENT,
+  KC_ESC,  CH_1,    CH_2,    CH_3,    CH_4,       CH_5,       CH_6,    CH_7,       CH_8,    CH_9,    CH_0,    KC_BSPC,
+  KC_TAB,  CH_B,    CH_W,    CH_P,    CH_O,       CH_GRV,     ALGR(CH_CIRC), CH_V,       CH_D,    CH_L,    CH_J,    KC_DEL,
+  CH_DLR,  CH_A,    CH_U,    CH_I,    CH_E,       CH_COMM,    CH_C,    CH_T,       CH_S,    CH_R,    CH_N,    KC_ENT,
+  KC_LSFT, CH_Z,    CH_Y,    CH_X,    CH_DOT,     CH_K,       CH_M,    CH_Q,       CH_G,    CH_H,    CH_F,    KC_RSFT,
   _______, KC_LCTL, KC_LALT, KC_LGUI, MO(_LOWER), KC_SPC,     KC_SPC,  MO(_RAISE), KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 /* Raise
@@ -61,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |   #  |  @   |      |      |      |      |   \  |   {  |   }  |   <  |   >  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |      |      |   £  | euro |      |   §  |   °  |   [  |   ]  |   $  |      |
+ * |      |      |      |   £  | euro |      |   §  |   °  |   [  |   ]  |   $  |   '  |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |   ~  |   -  |   _  |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -70,8 +71,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_RAISE] = LAYOUT_preonic_grid(
   S(KC_EQL), S(KC_1), S(KC_2),    S(KC_3),    S(KC_4),    S(KC_5), S(KC_6), S(KC_7),    S(KC_8),    S(KC_9),    S(KC_0), KC_BSPC,
-  _______,   RALT(KC_3), RALT(KC_G), _______, _______,    _______, _______, LSA(KC_7),  RALT(KC_8), RALT(KC_9), KC_NUBS, S(KC_NUBS),
-  _______,   _______, _______,    S(KC_BSLS), RALT(KC_E), _______, KC_GRV,  S(KC_GRV),  RALT(KC_5), RALT(KC_6), KC_BSLS, _______,
+  _______,   RALT(KC_3), RALT(KC_G), _______, _______,    CH_CIRC, _______, LSA(KC_7),  RALT(KC_8), RALT(KC_9), KC_NUBS, S(KC_NUBS),
+  _______,   _______, _______,    S(KC_BSLS), RALT(KC_E), _______, KC_GRV,  S(KC_GRV),  RALT(KC_5), RALT(KC_6), KC_BSLS, CH_QUOT,
   _______,   _______, _______,    _______,    _______,    _______, _______, RALT(KC_N), KC_SLSH,    S(KC_SLSH), _______, _______,
   _______,   _______, _______,    _______,    _______,    _______, _______, _______,    KC_MNXT,    KC_VOLD,    KC_VOLU, KC_MPLY
 ),
@@ -80,9 +81,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------------------------------------------------.
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |  f1  |  f2  |  f3  |  f4  |  f5  |  f6  |      |      |  z   |   w  |      |
+ * |      |  f1  |  f2  |  f3  |  f4  |  f5  |  f6  |      |      |      |      |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |  f7  |  f8  |  f9  |  f10 |  f11 | f12  |      |      |      |      |  f   |
+ * |      |  f7  |  f8  |  f9  |  f10 |  f11 | f12  |      |      |      |      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |cancel| copy |paste |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -91,9 +92,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_LOWER] = LAYOUT_preonic_grid(
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-  _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   _______, _______, KC_Y,    KC_W,    _______,
-  _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, _______, _______, _______, KC_F,
-  _______, G(KC_Y), G(KC_X), G(KC_C),  G(KC_V), _______, _______, _______, _______,_______, _______, _______,
+  _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   _______, _______, _______, _______, _______,
+  _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, _______, _______, _______, _______,
+  _______, G(KC_Y), G(KC_X), G(KC_C), G(KC_V), _______, _______, _______, _______, _______, _______, _______,
   _______, KC_LCTL, KC_LALT, KC_LGUI, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 /* Adjust (Lower + Raise)
