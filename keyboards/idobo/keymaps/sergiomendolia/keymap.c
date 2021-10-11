@@ -38,25 +38,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
  [_QW] = LAYOUT_ortho_5x15( /* QWERTY */
-    KC_ESC,  CH_1,    CH_2,    CH_3,    CH_4,    CH_5,    XXXXXXX, TG(_BE), XXXXXXX, CH_6,    CH_7,    CH_8,    CH_9,    CH_0,    KC_BSPC, \
-    KC_TAB,  CH_Q,    CH_W,    CH_E,    CH_R,    CH_T,    KC_END,  KC_HOME, KC_DEL,  CH_Z,    CH_U,    CH_I,    CH_O,    CH_P,    CH_QUOT, \
-    XXXXXXX, CH_A,    CH_S,    CH_D,    CH_F,    CH_G,    KC_ENT,  KC_PGUP, KC_ENT, CH_H,    CH_J,    CH_K,    CH_L,    KC_SLSH, KC_ENT,  \
-    KC_LSFT, CH_Y,    CH_X,    CH_C,    CH_V,    CH_B,    KC_ENT,  KC_PGDN, KC_ENT,  CH_N,    CH_M,    CH_COMM, CH_DOT,  KC_UP,   KC_RSFT, \
-    KC_LCTL, KC_LALT, CH_GRV,  KC_LGUI, KC_LGUI, KC_SPC,  KC_SPC, MO(_UP), KC_SPC,  KC_SPC, KC_RALT, KC_RGUI, KC_LEFT, KC_DOWN, KC_RGHT  \
+    KC_ESC,  CH_1,    CH_2,    CH_3,    CH_4,    CH_5,    TG(_BE),  CH_6,    CH_7,    CH_8,    CH_9,    CH_0,    CH_QUOT, KC_EQL,  KC_BSPC, \
+    KC_TAB,  CH_Q,    CH_W,    CH_E,    CH_R,    CH_T,    KC_END,   CH_Z,    CH_U,    CH_I,    CH_O,    CH_P,    CH_EGRV, KC_RBRC, KC_ENT,  \
+    XXXXXXX, CH_A,    CH_S,    CH_D,    CH_F,    CH_G,    MO(_UP),   CH_H,    CH_J,    CH_K,    CH_L,    CH_EACU, CH_AGRV, KC_NUHS, XXXXXXX,  \
+    KC_LSFT, CH_Y,    CH_X,    CH_C,    CH_V,    CH_B,    MO(_UP),   CH_N,    CH_M,    CH_COMM, CH_DOT,  KC_SLSH, XXXXXXX, KC_UP,   KC_RSFT, \
+    KC_LCTL, KC_LALT, _______, KC_LGUI, XXXXXXX,  XXXXXXX, KC_SPC ,  XXXXXXX,  KC_SPC,  KC_RGUI, KC_RCTL, KC_RALT, KC_LEFT, KC_DOWN, KC_RGHT  \
  ),
 
  [_UP] = LAYOUT_ortho_5x15( /* FUNCTION */
-    _______, _______, _______, _______, _______, _______,    _______, _______,    _______, _______, _______,    _______, _______, _______, _______,  \
-    _______, _______, _______, _______, _______, S(KC_RBRC), _______, _______,    _______, A(CH_5), A(CH_6),    CH_EGRV, KC_RBRC, KC_EQL, _______, \
-    _______, _______, _______, _______, _______, S(CH_QUOT), _______, S(KC_RBRC), _______, A(CH_8), A(CH_9),    CH_EACU, CH_AGRV, KC_NUHS, _______, \
-    _______, _______, _______, _______, _______, _______,    _______, S(CH_QUOT), _______, KC_NUBS, S(KC_NUBS), A(CH_N), _______, _______, _______, \
-    _______, _______, _______, _______, _______, _______,    _______, _______,    _______, _______, _______,    _______, _______, _______, _______  \
+    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,      KC_F10,  KC_F11,  KC_F12,  _______, \
+    _______, BL_TOGG, _______, _______, _______, _______, _______, A(CH_5), A(CH_6), _______,    _______, _______, _______, _______, _______, \
+    _______, BL_INC,  BL_DEC,  _______, _______, _______, _______, A(CH_8), A(CH_9), _______,    _______, _______, _______, _______, _______, \
+    _______, RGB_TOG, RGB_MODE_BREATHE, RGB_MODE_SNAKE, RGB_MODE_PLAIN, _______, _______, KC_NUBS, S(KC_NUBS), A(CH_N), _______, _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______  \
  ),
  [_BE] = LAYOUT_ortho_5x15( /* FUNCTION */
-     _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______, _______, _______, _______,  \
-     _______, CH_B,    CH_W,    CH_P,    CH_O,    A(KC_EQL),  _______, _______, _______, CH_ACUT, CH_V,    CH_D,    CH_L,    CH_J,    _______, \
-     _______, CH_A,    CH_U,    CH_I,    CH_E,    S(CH_QUOT), _______, _______, _______, CH_C,    CH_T,    CH_S,    CH_R,    CH_N,    _______, \
-     _______, CH_Z,    CH_Y,    CH_X,    CH_DOT,  CH_K,       _______, _______, _______, CH_M,    CH_Q,    CH_G,    CH_C,    _______, _______, \
-     _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, CH_F,    _______, _______, _______  \
+     _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, _______, _______, _______,_______, _______,  \
+     _______, CH_B,    CH_W,    CH_P,    CH_O,    A(KC_EQL),  _______, CH_ACUT, CH_V,    CH_D,    CH_L,    CH_J,    _______,_______, _______, \
+     _______, CH_A,    CH_U,    CH_I,    CH_E,    S(CH_QUOT), _______, CH_C,    CH_T,    CH_S,    CH_R,    CH_N,    _______,_______, _______, \
+     _______, CH_Z,    CH_Y,    CH_X,    CH_DOT,  CH_K,       _______, CH_M,    CH_Q,    CH_G,    CH_C,    _______, _______,_______, _______, \
+     _______, _______, _______, _______, _______, _______,    _______, _______, _______, CH_F,    _______, _______, _______,_______, _______ \
   )
 };
